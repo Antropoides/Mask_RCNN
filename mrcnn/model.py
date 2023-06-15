@@ -328,8 +328,8 @@ class ProposalLayer(KL.Layer):
                                       self.config.IMAGES_PER_GPU)
         return proposals
 
-    def compute_output_shape(self, input_shape):
-        return (None, self.proposal_count, 4)
+        def compute_output_shape(self, input_shape):
+            return (None, self.proposal_count, 4)
 
 
 ############################################################
