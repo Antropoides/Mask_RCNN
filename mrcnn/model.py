@@ -331,6 +331,9 @@ class ProposalLayer(KL.Layer):
         def compute_output_shape(self, input_shape):
             return (None, self.proposal_count, 4)
 
+        proposals = tf.reshape(proposals, [-1, self.proposal_count, 4])
+        scores_after_nms = tf.reshape(scores_after_nms, [-1, self.proposal_count])
+
 
 ############################################################
 #  ROIAlign Layer
